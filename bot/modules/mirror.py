@@ -328,11 +328,11 @@ class MirrorListener:
         else:
             msg += f'\n\n<b>Type: </b>{typ}'
             if ospath.isdir(f'{DOWNLOAD_DIR}{self.uid}/{name}'):
-                msg += f'\n<b>SubFolders: </b>{folders}'
-                msg += f'\n<b>Files: </b>{files}'
+                msg += f'\n<b>🗂️ SubFolders: </b>{folders}'
+                msg += f'\n<b>📁 Files: </b>{files}'
             link = short_url(link)
             buttons.buildbutton("☁️ Drive Link", link)
-            LOGGER.info(f'Done Uploading {name}')
+            LOGGER.info(f'✅ Done Uploading {name}')
             if INDEX_URL is not None:
                 url_path = requests.utils.quote(f'{name}')
                 share_url = f'{INDEX_URL}/{url_path}'
@@ -355,7 +355,7 @@ class MirrorListener:
             if SOURCE_LINK is True:
                 buttons.buildbutton(f"🔗 Source Link", S_link)
             """
-            uploader = f'\n\n<b>#Uploaded By: </b>{self.tag}\n'
+            uploader = f'\n\n<b>🙎 #Uploaded By: </b>{self.tag}\n'
             if MIRROR_LOGS:
                 try:
                     for i in MIRROR_LOGS:
